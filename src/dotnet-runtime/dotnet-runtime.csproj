@@ -6,9 +6,10 @@
     <TargetFramework>net7.0</TargetFramework>
 
     <OutputType>Exe</OutputType>
+    <WasmMainJSPath>Program.cs</WasmMainJSPath>
   </PropertyGroup>
 
-  <Target Name="PickRuntimePackAssets" AfterTargets="ResolveRuntimePackAssets" DependsOnTargets="Build">
+  <Target Name="PackNpmPackage" AfterTargets="ResolveRuntimePackAssets" DependsOnTargets="Build">
     <Message Text="NETCoreSdkVersion $(NETCoreSdkVersion)" Importance="High"/>
 
     <ItemGroup>
