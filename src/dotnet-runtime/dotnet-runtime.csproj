@@ -23,7 +23,7 @@
     </ItemGroup>
     <Copy SourceFiles="@(NpmPackageFiles)" DestinationFolder="dist" />
 
-    <WriteLinesToFile File="dist\package.json" Lines="$([System.IO.File]::ReadAllText(&quot;dist\package.json&quot;).Replace(&quot;1.0.0&quot;,&quot;$(NETCoreSdkVersion)&quot;).Replace(&quot;dotnet-runtime&quot;,&quot;@pavelsavara/dotnet-runtime&quot;))" Overwrite="true" Encoding="us-ascii"/>
+    <WriteLinesToFile File="dist\package.json" Lines="$([System.IO.File]::ReadAllText(&quot;dist\package.json&quot;).Replace(&quot;1.0.0&quot;,&quot;$(NETCoreSdkVersion)&quot;).Replace(&quot;@microsoft/dotnet-runtime&quot;,&quot;@pavelsavara/dotnet-runtime&quot;))" Overwrite="true" Encoding="us-ascii"/>
 
     <Exec Command="npm pack --pack-destination .." WorkingDirectory="dist"/>
     <!--
